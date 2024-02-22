@@ -18,8 +18,8 @@ class my_App(tk.Tk):
         self.uygulama_name=""
         self.uygulama_password=""
 
-        self.sha_name="9f9f591f70d75e0bef4761625c96a505ad40247ebe3fa9f3421cd4a4c3a2a30a"
-        self.sha_password="ed8a0dd78c80a7554129d2c84cee39ea8b9bb60da1faf46ef99b1ad4fb07e47e"
+        self.sha_name=""
+        self.sha_password=""
         self.giris=False
         self.geometry("1024x900")
         self.title("INSURANCE APP")
