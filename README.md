@@ -12,11 +12,12 @@ important points
 if you dont want to write username,you can add parametre like this
 ("11111111111","1","11111","1111111111") in ENTER_LEAVE_CONTROL function from main.py
 
-#give selenium Insurance history date in "date.txt" file
+#give_date 
+give date for selenium Insurance history date in "date.txt" file
 you should give beginning date "day.month.year" for "create SIGORTA page_container()" function
 
 
-# file direction
+# file_direction
 1-you should download selenium.chrome browser into "seleniumFile"
 2-you should change Downloads path in "get_Excels()" function for 2 times.
 
@@ -28,10 +29,10 @@ connection of mysql.Moreover i had to check password for every page open button,
 should change encripted sql password in "verify()" function from application.py
 2-you should change mysql connect parameters in application 
 
-#change img file
+#change_img_file
 you should change img path and name in "create_pager()" function from application.py
 self.encounter_image_1=tb.PhotoImage(file="1.png")
 
 
-#Employee_region define 
+#Employee_region_define 
 you should define regions variable "bolgeler" in "bolge_goruntule()" function from application.py 
