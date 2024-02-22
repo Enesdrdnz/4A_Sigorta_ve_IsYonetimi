@@ -13,7 +13,7 @@ if you dont want to write username,you can add parametre like this
 ("11111111111","1","11111","1111111111") in ENTER_LEAVE_CONTROL function from main.py
 
 #give selenium Insurance history date in "date.txt" file
-you should give beginning date for "create SIGORTA page_container()" function
+you should give beginning date "day.month.year" for "create SIGORTA page_container()" function
 
 
 # file direction
@@ -31,6 +31,7 @@ should change encripted sql password in "verify()" function from application.py
 #change img file
 you should change img path and name in "create_pager()" function from application.py
 self.encounter_image_1=tb.PhotoImage(file="1.png")
+
 
 #Employee_region define 
 you should define regions variable "bolgeler" in "bolge_goruntule()" function from application.py 
