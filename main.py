@@ -212,70 +212,7 @@ class Sigorta():
 
         with pd.ExcelWriter(path=r"Sigorta_kayit.xlsx") as writer:
             filtered_df.to_excel(writer,sheet_name="sigorta")        
-    def girisi_tamamla(self,tc,d,m,y):
-        
-        self.Sign_in()
-        find_links=self.browser.find_elements(By.TAG_NAME,"a")
-        giris_sorgula_page=find_links[32]
-        giris_sorgula_page.click()
-        kimlikentry=self.browser.find_element(By.NAME,"kimlikno")
-        kimlikentry.send_keys(tc)
-        giris_sorgula_button=self.browser.find_element(By.NAME,"sorgulabtn")
-        time.sleep(3)
-        giris_sorgula_button.click()
-        giris_tags=self.browser.find_elements(By.TAG_NAME,"tr")
-        girismiktari=len(giris_tags)-16
-        self.browser.get("https://uyg.sgk.gov.tr/SigortaliTescil/amp/sigortaliTescilAction?jobid=ayrilissorgula")
-        kimlikleave=self.browser.find_element(By.NAME,"kimlikno")
-        kimlikleave.send_keys(tc)
-        cikis_sorgula_button=self.browser.find_element(By.NAME,"sorgulabtn")
-        cikis_sorgula_button.click()
-        cikis_tags=self.browser.find_elements(By.TAG_NAME,"tr")
-        cikismiktari=len(cikis_tags)-19
-        print(girismiktari)
-        print(cikismiktari)
-        time.sleep(5)
 
-        if (girismiktari-cikismiktari ==0):
-            self.browser.get("https://uyg.sgk.gov.tr/SigortaliTescil/jsp/anamenu.jsp")
-            girise_basla_kimlik=self.browser.find_element(By.NAME,"tckno")
-            girise_basla_kimlik.send_keys(tc)
-            basla_button=self.browser.find_element(By.NAME,"button1")
-            basla_button.click()
-            time.sleep(3)
-            basla_button_2=self.browser.find_element(By.NAME,"button3")
-            basla_button_2.click()
-
-            gun_entry=self.browser.find_element(By.NAME,"tx_TekIsGirTarGG")
-            gun_entry.send_keys(d)
-            ay_entry=self.browser.find_element(By.NAME,"tx_TekIsGirTarAA")
-            ay_entry.send_keys(m)
-            yil_entry=self.browser.find_element(By.NAME,"tx_TekIsGirTarYY")
-            yil_entry.send_keys(y)
-            ozur_sec=self.browser.find_element(By.NAME,"cmb_Ozurkod")
-            dropdown = Select(ozur_sec)
-            dropdown.select_by_visible_text("Hayır")
-            time.sleep(1)
-            eski_hukum_sec=self.browser.find_element(By.NAME,"cmb_eskiHukumlu")
-            dropdown_2=Select(eski_hukum_sec)
-            dropdown_2.select_by_visible_text("Hayır")
-
-            ogrenim_durum=self.browser.find_element(By.NAME,"cmb_ogrenimDurum")
-            dropdown_3=Select(ogrenim_durum)
-            dropdown_3.select_by_visible_text("İlkokul")
-
-            otuzdanaz_mi=self.browser.find_element(By.NAME,"30gundenaz")
-            dropdown_4=Select(otuzdanaz_mi)
-            dropdown_4.select_by_visible_text("Hayır")
-
-            meslek_sec=self.browser.find_element(By.NAME,"cbMeslek")
-            dropdown_4=Select(meslek_sec)
-            time.sleep(3)
-            actions = ActionChains(self.browser)
-            meslek_sec.click()
-            dropdown_4.select_by_index(1652)
-
-            time.sleep(40)
 
 
 
